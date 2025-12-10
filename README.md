@@ -1,1 +1,0 @@
-# AI-Spec-Driven-Hackathon
