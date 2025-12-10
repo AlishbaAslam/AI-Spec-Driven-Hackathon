@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-new-feature.sh --json \"Educational Module on The AI-Robot Brain (NVIDIA Isaac™)\nTarget audience: Robotics engineers and AI developers building autonomous systems\nFocus: Advanced perception, training, and navigation using NVIDIA tools\nSuccess criteria:\n\nCovers 2-3 chapters with practical explanations and examples\nExplains key technical concepts with diagrams or pseudocode where helpful\nReader can describe how to integrate these tools for robot development after reading\nAll technical claims backed by NVIDIA documentation or examples\nConstraints:\nWord count: 2000-4000 words total\nFormat: Markdown source, with headings for chapters and sub-sections\nSources: Official NVIDIA documentation and open-source repos, published within past 5 years\nTimeline: Complete within 1 week\nNot building:\nFull software implementation or code repository\nHardware setup guides or physical robot assembly\nBroader AI ethics or societal impact discussions\nComparisons to non-NVIDIA robotics platforms\n\nChapters:\n\nNVIDIA Isaac Sim: Photorealistic Simulation and Synthetic Data Generation\nIsaac ROS: Hardware-Accelerated VSLAM and Navigation\nNav2: Path Planning for Bipedal Humanoid Movement\" --number 1 --short-name \"isaac-ai-robot\")",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"AI-Robot Brain Educational Module Specification\" --stage spec --feature \"001-isaac-ai-robot\" --json)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks)",
+      "Bash(find /mnt/c/Users/P.C/Documents/GitHub/AI-Spec-Driven-Hackathon/humanoid-robotics-textbook/specs/001-isaac-ai-robot/checklists/ -name \"*.md\" -exec basename {} ;)",
+      "Bash(git fetch --all --prune)",
+      "Bash(.specify/scripts/bash/create-new-feature.sh --json \"Educational Module on Vision-Language-Action (VLA)\nTarget audience: Robotics engineers and AI developers building autonomous systems\nFocus: The convergence of LLMs and Robotics, including voice-to-action and cognitive planning\nSuccess criteria:\n\nCovers 3 chapters with practical explanations and examples\nExplains key technical concepts with diagrams or pseudocode where helpful\nReader can describe how to implement VLA components in robotic systems after reading\nAll technical claims backed by official documentation or examples from relevant tools\nConstraints:\nWord count: 2000-4000 words total\nFormat: Markdown source, with headings for chapters and sub-sections\nSources: Official documentation from OpenAI, ROS, and related open-source projects, published within past 5 years\nTimeline: Complete within 1 week\nNot building:\nFull software implementations or code repositories\nHardware setup guides or physical robot assembly\nBroader AI ethics or societal impact discussions\nComparisons to alternative VLA frameworks or tools\n\nChapters:\n\nVoice-to-Action: Using OpenAI Whisper for Voice Commands\nCognitive Planning: Using LLMs to Translate Natural Language into ROS 2 Actions\nCapstone Project: The Autonomous Humanoid\" --number 1 --short-name \"vla-educational-module\")",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --help)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh --paths-only)",
+      "Bash(mkdir -p specs/001-create-concise-beginner/checklists)",
+      "Bash(git checkout 001-vla-educational-module)",
+      "Bash(.specify/scripts/bash/create-phr.sh --title \"Physical AI Intro Chapter Spec\" --stage spec --feature \"001-create-concise-beginner\" --json)",
+      "Bash(find . -name \"docusaurus.config.*\" -o -name \"docusaurus.config.js\" -o -name \"docusaurus.config.ts\" -o -name \"package.json\" -exec grep -l \"docusaurus\" {} ;)",
+      "Bash(git rev-parse --git-dir)",
+      "mcp__context7__get-library-docs",
+      "mcp__context7__resolve-library-id",
+      "Bash(npm run build)"
+    ]
+  }
+}
