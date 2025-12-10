@@ -1,0 +1,34 @@
+```mermaid
+graph TB
+    subgraph "User Interaction"
+        A[Natural Language Command]
+    end
+
+    subgraph "Vision System"
+        V1[Camera Input]
+        V2[Object Detection]
+        V3[Scene Understanding]
+    end
+
+    subgraph "Language System"
+        L1[Whisper - Speech Recognition]
+        L2[LLM - Cognitive Planning]
+    end
+
+    subgraph "Action System"
+        R1[ROS 2 Action Planning]
+        R2[Robot Execution]
+    end
+
+    A --> L1
+    V1 --> V2
+    V2 --> V3
+    L1 --> L2
+    V3 --> L2
+    L2 --> R1
+    R1 --> R2
+
+    style A fill:#e1f5fe
+    style R2 fill:#e8f5e8
+    style L2 fill:#fff3e0
+```

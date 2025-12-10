@@ -1,0 +1,62 @@
+# ROS 2 Services Contract for The Robotic Nervous System (ROS 2) Module
+
+# This contract defines the expected ROS 2 service interfaces that will be demonstrated
+# in the educational content for the ROS 2 module.
+
+# Service: Robot Control Command
+# Description: Send control commands to the simulated robot
+# Package: std_srvs (or custom package for educational purposes)
+control_command_service:
+  name: /robot_control/command
+  service_type: custom_interfaces/srv/RobotCommand  # Custom for educational purposes
+  request_fields:
+    - command_type: string  # e.g., "move_forward", "turn", "stop"
+    - parameters: string  # Additional parameters for the command
+    - duration: float64  # Duration for timed commands
+  response_fields:
+    - success: bool  # Whether the command was accepted
+    - message: string  # Additional information about the command execution
+
+# Service: Sensor Data Request
+# Description: Request current sensor data from the robot
+sensor_data_service:
+  name: /robot_sensors/get_data
+  service_type: custom_interfaces/srv/SensorDataRequest
+  request_fields:
+    - sensor_types: string[]  # List of sensor types to retrieve
+    - timeout: float64  # Timeout for the request
+  response_fields:
+    - success: bool  # Whether the request was successful
+    - sensor_data: dict  # Dictionary containing sensor readings
+    - timestamp: float64  # Timestamp of the data collection
+
+# Service: Robot State Query
+# Description: Query the current state of the robot
+robot_state_service:
+  name: /robot_state/get_state
+  service_type: custom_interfaces/srv/RobotStateRequest
+  request_fields:
+    - state_components: string[]  # Which state components to retrieve
+  response_fields:
+    - success: bool  # Whether the request was successful
+    - robot_state: dict  # Dictionary containing robot state information
+    - timestamp: float64  # Timestamp of the state information
+
+# Topic: Sensor Data Stream
+# Description: Continuous stream of sensor data from the robot
+sensor_data_topic:
+  name: /robot_sensors/data_stream
+  message_type: sensor_msgs/msg/SensorData  # Using appropriate ROS 2 message types
+  fields:
+    - sensor_type: string  # Type of sensor
+    - data: float64[]  # Sensor readings
+    - header: std_msgs/msg/Header  # Standard header with timestamp and frame ID
+
+# Topic: Robot Control Commands
+# Description: Stream of control commands to the robot
+control_command_topic:
+  name: /robot_control/cmd_vel
+  message_type: geometry_msgs/msg/Twist  # Standard ROS 2 message type
+  fields:
+    - linear: geometry_msgs/msg/Vector3  # Linear velocity
+    - angular: geometry_msgs/msg/Vector3  # Angular velocity
