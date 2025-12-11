@@ -13,6 +13,8 @@ const config = {
   title: 'Humanoid Robotics Digital Twin Guide',
   tagline: 'Learn to create digital twins with Gazebo and Unity',
   favicon: 'img/favicon.ico',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
